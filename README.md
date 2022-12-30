@@ -5,7 +5,7 @@ User Productivity Logs aggregation using mongodb and spring boot
 ## Mongodb
 I created the below query in 5 stages to get the User complete productivity logs information segregated by years, months and days
 
-Query:
+__Query__:
 ```
 db.productivityLog.aggregate([
   {$match: {userid: "oneable1"}},
@@ -41,3 +41,11 @@ db.productivityLog.aggregate([
 ```
 
 ## Spring boot:
+- A basic spring boot project with spring web and spring mongo data dependencies
+- Provided repository, service and controller classes to perform the crud operations on database.
+- linked each operation with a rest api
+- Created anothor custom repository for performing aggregation operations
+- Provided the implementation for above repository by connecting to the mongo client and getting the database, collection.
+- Generated the Java code from the mongo query for performing the above aggregation in java using the mongo compass aggregation export to langugage feature.
+- Used the save code in the custom repository implementation to perform the aggregation in the database,
+- To convert the document type which is received after performing the aggregation, i have used the mongoConvertor, then stored the result in the arrayList.

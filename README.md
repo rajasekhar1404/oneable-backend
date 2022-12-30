@@ -5,6 +5,64 @@ User Productivity Logs aggregation using mongodb and spring boot
 ## Mongodb
 I created the below query in 5 stages to get the User complete productivity logs information segregated by years, months and days
 
+__Sample mongo data__
+- currentday - 27-12-2022 09:00:00 to 10:00:00
+```
+db.productivityLog.insertOne(
+  {
+    userid: 'oneable1',
+    connectionStartTime: 1672111800000,
+    connectionEndTime: 1672115400000,
+    createdDate: ISODate("2022-12-27 09:00:00")
+  }
+)
+```
+
+- currentDay - 27-12-2022 10:00:00 to 11:00:00
+```
+db.productivityLog.insertOne(
+  {
+    userid: 'oneable1',
+    connectionStartTime: 1672115400000,
+    connectionEndTime: 1672119000000,
+    createdDate: ISODate("2022-12-27 10:00:00")
+  }
+)
+```
+
+- previousDay - 26-12-2022 09:00:00 to 10:00:00
+```
+db.productivityLog.insertOne(
+  {
+    userid: 'oneable1',
+    connectionStartTime: 1672025400000,
+    connectionEndTime: 1672029000000,
+    createdDate: ISODate("2022-12-26 09:00:00")
+  }
+)
+```
+- previousMonth - 27-11-2022 09:00:00 to 10:00:00
+```
+db.productivityLog.insertOne(
+  {
+    userid: 'oneable1',
+    connectionStartTime: 1669519800000,
+    connectionEndTime: 1669523400000,
+    createdDate: ISODate("2022-11-27 09:00:00")
+  }
+)
+```
+- previousYear - 27-12-2021 09:00:00 to 10:00:00
+```
+db.productivityLog.insertOne(
+  {
+    userid: 'oneable1',
+    connectionStartTime: 1640575800000,
+    connectionEndTime: 1640579400000,
+    createdDate: ISODate("2021-11-27 09:00:00")
+  }
+)
+```
 __Query__:
 ```
 db.productivityLog.aggregate([

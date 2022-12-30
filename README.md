@@ -6,6 +6,7 @@ User Productivity Logs aggregation using mongodb and spring boot
 I created the below query in 5 stages to get the User complete productivity logs information segregated by years, months and days
 
 Query:
+```
 db.productivityLog.aggregate([
   {$match: {userid: "oneable1"}},
   {$group: {
@@ -37,5 +38,6 @@ db.productivityLog.aggregate([
     totalUserHours: {$sum: "$totalYearHours"}
   }}
 ])
+```
 
 ## Spring boot:

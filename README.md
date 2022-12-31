@@ -110,4 +110,4 @@ db.productivityLog.aggregate([
 
 ## Response
 - GET http://localhost:8080/productivity/oneable1
-![img.png](img.png)
+![response](https://ibb.co/Kx872S2)

@@ -107,3 +107,7 @@ db.productivityLog.aggregate([
 - Generated the Java code from the mongo query for performing the above aggregation in java using the mongo compass aggregation export to langugage feature.
 - Used the save code in the custom repository implementation to perform the aggregation in the database,
 - To convert the document type which is received after performing the aggregation, i have used the mongoConvertor, then stored the result in the arrayList.
+
+## Response
+- GET http://localhost:8080/productivity/oneable1
+![img.png](img.png)

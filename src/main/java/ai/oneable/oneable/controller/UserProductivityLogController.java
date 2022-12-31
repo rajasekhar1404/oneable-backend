@@ -25,7 +25,7 @@ public class UserProductivityLogController {
     }
 
 //  It will add the application logs in to the database
-    @PutMapping("/add")
+    @PutMapping("/applicationlog")
     public ApplicationLog addUserData(@RequestBody ApplicationLog applicationLog) {
         return userProductivityLogService.addLog(applicationLog);
     }

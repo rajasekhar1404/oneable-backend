@@ -4,6 +4,8 @@ import ai.oneable.oneable.beans.ApplicationLog;
 import ai.oneable.oneable.beans.UserProductivityLog;
 import ai.oneable.oneable.service.UserCustomProductivityService;
 import ai.oneable.oneable.service.UserProductivityLogService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,9 +20,12 @@ public class UserProductivityLogController {
     @Autowired
     private UserCustomProductivityService userCustomProductivityService;
 
+    Logger logger = LoggerFactory.getLogger(UserProductivityLogController.class);
+
 //  It will get the productivity of user passed to it
     @GetMapping("/productivity/{userid}")
     public List<UserProductivityLog> getProductivityByUser(@PathVariable("userid") String userid) {
+        logger.trace("method happened");
         return userCustomProductivityService.getProductivityByUser(userid);
     }
 

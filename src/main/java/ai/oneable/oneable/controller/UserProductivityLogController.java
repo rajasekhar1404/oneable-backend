@@ -30,4 +30,9 @@ public class UserProductivityLogController {
         return userProductivityLogService.addLog(applicationLog);
     }
 
+    @GetMapping("/productivity")
+    public List<UserProductivityLog> getTotalProductivity() {
+        return getProductivityByUser(null);
+    }
+
 }
